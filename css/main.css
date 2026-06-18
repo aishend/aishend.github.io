@@ -94,6 +94,7 @@ nav {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 6px 16px;
+  align-items: center;
   font-family: var(--font-mono);
   font-size: 13.5px;
   padding: 7px 0;
@@ -292,6 +293,47 @@ footer {
   font-family: var(--font-mono);
   border-top: 1px solid var(--line);
   margin-top: 0;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger children */
+.reveal:nth-child(2) { transition-delay: 0.07s; }
+.reveal:nth-child(3) { transition-delay: 0.14s; }
+.reveal:nth-child(4) { transition-delay: 0.21s; }
+
+/* ── HOVER LIFTS ── */
+.card {
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--copper);
+  background: var(--bg-raised-2);
+}
+
+.project-entry {
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.project-entry:hover {
+  border-color: var(--copper);
+  background: var(--bg-raised-2);
+}
+
+.nav-links a {
+  transition: color 0.15s ease;
 }
 
 /* ── RESPONSIVE ── */

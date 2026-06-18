@@ -14,7 +14,7 @@
     <ul class="nav-links">
       <li><a href="../index.html">about</a></li>
       <li><a href="index.html" class="active">projects</a></li>
-      <li><a href="../log/index.html">log</a></li>
+      <li><a href="../writing/index.html">writing</a></li>
     </ul>
   </div>
 </nav>
@@ -65,5 +65,13 @@
   </footer>
 
 </div>
+<script>
+  const revealEls = document.querySelectorAll('section, .project-entry, .page-header');
+  revealEls.forEach(el => el.classList.add('reveal'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

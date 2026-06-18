@@ -14,7 +14,7 @@
     <ul class="nav-links">
       <li><a href="index.html" class="active">about</a></li>
       <li><a href="projects/index.html">projects</a></li>
-      <li><a href="log/index.html">log</a></li>
+      <li><a href="writing/index.html">writing</a></li>
     </ul>
   </div>
 </nav>
@@ -48,18 +48,17 @@
     <h2>Who I am</h2>
     <div class="lede">
       <p>
-        I'm a Computer Engineering student. What keeps me going is not building things — it's
-        understanding them. Operating systems, computer architecture, how software maps to hardware.
-        The kind of knowledge that doesn't expire when a framework does.
+        Computer Engineering student. I care more about understanding systems than building things on top of them —
+        operating systems, architecture, what actually happens when you run a program.
+        Not because it's useful, though it is, but because it bothers me not to know.
       </p>
       <p>
-        I'm watching what AI is doing to this field and taking it seriously. My goal is not to
-        resist it or defer to it — it's to understand its actual impact: what it changes, what it
-        doesn't, and what it means to still be worth something as an engineer when the tools get
-        this powerful. That requires going deeper, not shallower.
+        AI is changing what this field is, fast. I'm not pretending otherwise.
+        What I'm trying to figure out is what it means to still think like an engineer when the tools
+        can write the code. My bet is: go deeper, not shallower.
       </p>
       <p>
-        This site is my public notebook. Projects, progress, and the occasional thought worth writing down.
+        This is my public notebook. Projects, logs, whatever I'm thinking about.
       </p>
     </div>
   </section>
@@ -70,17 +69,17 @@
     <div class="grid3">
       <div class="card">
         <h3>Systems &amp; architecture</h3>
-        <p>Operating systems, computer architecture, C. The layer where software stops being abstract.</p>
+        <p>How computers actually work — from the instruction set up. OS, architecture, low-level software.</p>
         <span class="tag">depth-first</span>
       </div>
       <div class="card">
-        <h3>Embedded &amp; hardware</h3>
-        <p>Raspberry Pi, sensors, real-time constraints. Where a bug doesn't throw an exception — it just doesn't work.</p>
+        <h3>Building things</h3>
+        <p>Building things to understand them. The project is just the excuse.</p>
         <span class="tag">hands-on</span>
       </div>
       <div class="card">
-        <h3>AI &amp; its consequences</h3>
-        <p>Not how to use it. What it means for how we learn, what we build, and who counts as an engineer.</p>
+        <h3>AI as a tool</h3>
+        <p>Figuring out where to invest time when AI can do more and more — what still requires a person, and why.</p>
         <span class="tag">open question</span>
       </div>
     </div>
@@ -120,22 +119,42 @@
 
   <footer>
     <div class="wrap">
-      leandro moreira · updated as things get built
+      © <span id="yr"></span> Leandro Moreira
     </div>
   </footer>
 
 </div>
 
 <script>
-  const start = Date.now();
+  const EPOCH = new Date('2026-06-18T00:00:00').getTime();
   const el = document.getElementById('uptime');
   function pad(n) { return String(n).padStart(2, '0'); }
   function tick() {
-    const s = Math.floor((Date.now() - start) / 1000);
-    el.textContent = 'UPTIME: ' + pad(Math.floor(s/3600)) + ':' + pad(Math.floor((s%3600)/60)) + ':' + pad(s%60);
+    const total = Math.floor((Date.now() - EPOCH) / 1000);
+    const d = Math.floor(total / 86400);
+    const h = Math.floor((total % 86400) / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const s = total % 60;
+    el.textContent = 'UPTIME: ' + d + 'd ' + pad(h) + ':' + pad(m) + ':' + pad(s);
   }
   tick();
   setInterval(tick, 1000);
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('section, .card, .project-entry, .panel');
+  revealEls.forEach(el => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  revealEls.forEach(el => observer.observe(el));
 </script>
 
 </body>
