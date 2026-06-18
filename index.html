@@ -1,12 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leandro Moreira</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leandro Moreira</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>Leandro Moreira</h1>
-    <p>This is a test</p>
+
+<nav>
+  <div class="wrap nav-inner">
+    <span class="nav-home"><span>LM</span> / leandro moreira</span>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">about</a></li>
+      <li><a href="projects/index.html">projects</a></li>
+      <li><a href="log/index.html">log</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="panel">
+      <div class="panel-row">
+        <span class="panel-key">NAME:</span>
+        <span class="panel-val name-field">Leandro Moreira</span>
+      </div>
+      <div class="panel-row">
+        <span class="panel-key">ROLE:</span>
+        <span class="panel-val">Computer Engineering Student</span>
+      </div>
+      <div class="panel-row">
+        <span class="panel-key">FOCUS:</span>
+        <span class="panel-val">systems · architecture · how things actually work</span>
+      </div>
+      <div class="panel-row">
+        <span class="panel-key">STATUS:</span>
+        <span class="panel-val"><span class="status-dot" aria-hidden="true"></span>learning, building, figuring it out</span>
+      </div>
+      <div class="uptime" id="uptime">UPTIME: 00:00:00</div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="eyebrow">About</div>
+    <h2>Who I am</h2>
+    <div class="lede">
+      <p>
+        I'm a Computer Engineering student. What keeps me going is not building things — it's
+        understanding them. Operating systems, computer architecture, how software maps to hardware.
+        The kind of knowledge that doesn't expire when a framework does.
+      </p>
+      <p>
+        I'm watching what AI is doing to this field and taking it seriously. My goal is not to
+        resist it or defer to it — it's to understand its actual impact: what it changes, what it
+        doesn't, and what it means to still be worth something as an engineer when the tools get
+        this powerful. That requires going deeper, not shallower.
+      </p>
+      <p>
+        This site is my public notebook. Projects, progress, and the occasional thought worth writing down.
+      </p>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="eyebrow">Areas of focus</div>
+    <h2>Where I'm putting time</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>Systems &amp; architecture</h3>
+        <p>Operating systems, computer architecture, C. The layer where software stops being abstract.</p>
+        <span class="tag">depth-first</span>
+      </div>
+      <div class="card">
+        <h3>Embedded &amp; hardware</h3>
+        <p>Raspberry Pi, sensors, real-time constraints. Where a bug doesn't throw an exception — it just doesn't work.</p>
+        <span class="tag">hands-on</span>
+      </div>
+      <div class="card">
+        <h3>AI &amp; its consequences</h3>
+        <p>Not how to use it. What it means for how we learn, what we build, and who counts as an engineer.</p>
+        <span class="tag">open question</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="recent">
+    <div class="eyebrow">Recent</div>
+    <h2>What I've been doing</h2>
+
+    <div class="project-entry">
+      <div class="project-header">
+        <div class="project-title">Motion sensor with alert</div>
+        <span class="badge">in progress</span>
+      </div>
+      <div class="project-desc">
+        Raspberry Pi + PIR sensor. Detects motion, triggers an alert. First hardware project
+        built from scratch — the goal is to understand the hardware-software boundary, not to ship something impressive.
+      </div>
+      <div class="project-tags">
+        <span class="tag">raspberry pi</span>
+        <span class="tag">python</span>
+        <span class="tag">embedded</span>
+      </div>
+    </div>
+
+    <a href="projects/index.html" style="display:inline-block;margin-top:20px;font-family:var(--font-mono);font-size:13px;color:var(--copper-bright);">all projects →</a>
+  </section>
+
+  <section id="contact">
+    <div class="eyebrow">Contact</div>
+    <h2>Find me</h2>
+    <div class="contact-links">
+      <a href="https://github.com/aishend" target="_blank" rel="noopener">github.com/aishend</a>
+      <a href="https://www.linkedin.com/in/leandro-afonso-m/" target="_blank" rel="noopener">linkedin.com/in/leandro-afonso-m</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      leandro moreira · updated as things get built
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const start = Date.now();
+  const el = document.getElementById('uptime');
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    const s = Math.floor((Date.now() - start) / 1000);
+    el.textContent = 'UPTIME: ' + pad(Math.floor(s/3600)) + ':' + pad(Math.floor((s%3600)/60)) + ':' + pad(s%60);
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+
 </body>
 </html>
