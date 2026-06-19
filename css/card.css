@@ -1,0 +1,16 @@
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px 20px;
+  transition: transform 0.2s ease, border-color 0.25s ease, background 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--copper);
+    background: var(--bg-raised-2);
+  }
+
+  & h3 { font-size: 14.5px; margin-bottom: 8px; }
+  & p  { color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+}

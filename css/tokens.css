@@ -1,0 +1,14 @@
+:root {
+  --bg-base:      #0F1419;
+  --bg-raised:    #161D27;
+  --bg-raised-2:  #1C2433;
+  --line:         #263040;
+  --text-primary: #E4E8EE;
+  --text-muted:   #7E8EA0;
+  --text-faint:   #4E5E70;
+  --copper:       #B87333;
+  --copper-bright:#D4894A;
+  --signal:       #5EAD7A;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Consolas, monospace;
+  --font-sans: ui-sans-serif, "Inter", "Segoe UI", system-ui, sans-serif;
+}

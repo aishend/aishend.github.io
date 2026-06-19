@@ -8,9 +8,11 @@
 </head>
 <body>
 
-<nav>
+<nav class="nav">
   <div class="wrap nav-inner">
-    <span class="nav-home"><span>LM</span> / leandro moreira</span>
+    <a href="index.html" class="nav-home">
+      <span class="nav-home__sep">~</span>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">about</a></li>
       <li><a href="projects/index.html">projects</a></li>
@@ -19,77 +21,40 @@
   </div>
 </nav>
 
-<div class="wrap">
+<main class="wrap">
 
   <header class="hero">
-    <div class="panel">
+    <div class="panel glow">
       <div class="panel-row">
         <span class="panel-key">NAME:</span>
-        <span class="panel-val name-field">Leandro Moreira</span>
+        <span class="panel-val panel__name">Leandro Moreira</span>
       </div>
       <div class="panel-row">
         <span class="panel-key">ROLE:</span>
         <span class="panel-val">Computer Engineering Student</span>
       </div>
       <div class="panel-row">
-        <span class="panel-key">FOCUS:</span>
-        <span class="panel-val">systems · architecture · how things actually work</span>
+        <span class="panel-key">AT:</span>
+        <span class="panel-val">FEUP — Faculty of Engineering, University of Porto</span>
       </div>
       <div class="panel-row">
-        <span class="panel-key">STATUS:</span>
-        <span class="panel-val"><span class="status-dot" aria-hidden="true"></span>learning, building, figuring it out</span>
+        <span class="panel-key">GITHUB:</span>
+        <span class="panel-val"><a href="https://github.com/aishend" target="_blank" rel="noopener">github.com/aishend</a></span>
       </div>
-      <div class="uptime" id="uptime">UPTIME: 00:00:00</div>
+      <div class="panel-row">
+        <span class="panel-key">LINKEDIN:</span>
+        <span class="panel-val"><a href="https://www.linkedin.com/in/leandro-afonso-m/" target="_blank" rel="noopener">linkedin.com/in/leandro-afonso-m</a></span>
+      </div>
+      <div class="panel-uptime">
+        <span class="status-dot" aria-hidden="true"></span>UPTIME: 99.99%
+      </div>
     </div>
   </header>
 
-  <section id="about">
-    <div class="eyebrow">About</div>
-    <h2>Who I am</h2>
-    <div class="lede">
-      <p>
-        Computer Engineering student. I care more about understanding systems than building things on top of them —
-        operating systems, architecture, what actually happens when you run a program.
-        Not because it's useful, though it is, but because it bothers me not to know.
-      </p>
-      <p>
-        AI is changing what this field is, fast. I'm not pretending otherwise.
-        What I'm trying to figure out is what it means to still think like an engineer when the tools
-        can write the code. My bet is: go deeper, not shallower.
-      </p>
-      <p>
-        This is my public notebook. Projects, logs, whatever I'm thinking about.
-      </p>
-    </div>
-  </section>
-
-  <section id="areas">
-    <div class="eyebrow">Areas of focus</div>
-    <h2>Where I'm putting time</h2>
-    <div class="grid3">
-      <div class="card">
-        <h3>Systems &amp; architecture</h3>
-        <p>How computers actually work — from the instruction set up. OS, architecture, low-level software.</p>
-        <span class="tag">depth-first</span>
-      </div>
-      <div class="card">
-        <h3>Building things</h3>
-        <p>Building things to understand them. The project is just the excuse.</p>
-        <span class="tag">hands-on</span>
-      </div>
-      <div class="card">
-        <h3>AI as a tool</h3>
-        <p>Figuring out where to invest time when AI can do more and more — what still requires a person, and why.</p>
-        <span class="tag">open question</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="recent">
+  <section id="recent" class="reveal">
     <div class="eyebrow">Recent</div>
     <h2>What I've been doing</h2>
-
-    <div class="project-entry">
+    <div class="project-entry glow reveal">
       <div class="project-header">
         <div class="project-title">Motion sensor with alert</div>
         <span class="badge">in progress</span>
@@ -105,57 +70,81 @@
       </div>
     </div>
 
-    <a href="projects/index.html" style="display:inline-block;margin-top:20px;font-family:var(--font-mono);font-size:13px;color:var(--copper-bright);">all projects →</a>
+    <a href="projects/index.html" class="link-more">all projects →</a>
   </section>
 
-  <section id="contact">
-    <div class="eyebrow">Contact</div>
-    <h2>Find me</h2>
-    <div class="contact-links">
-      <a href="https://github.com/aishend" target="_blank" rel="noopener">github.com/aishend</a>
-      <a href="https://www.linkedin.com/in/leandro-afonso-m/" target="_blank" rel="noopener">linkedin.com/in/leandro-afonso-m</a>
+  <section id="setup" class="reveal">
+    <div class="eyebrow">Setup</div>
+    <h2>My personal setup</h2>
+    <div class="neofetch">
+      <pre class="nf-art">                  -`
+                 .o+`
+                `ooo/
+               `+oooo:
+              `+oooooo:
+              -+oooooo+:
+            `/:-:++oooo+:
+           `/++++/+++++++:
+          `/++++++++++++++:
+         `/+++ooooooooooooo/`
+        ./ooosssso++osssssso+`
+       .oossssso-    /ossssss+`
+      -osssssso.      :ssssssso.
+     :osssssss/        osssso+++.
+    /ossssssss/        +ssssooo/-
+  `/ossssso+/:-        -:/+osssso+-
+ `+sso+:-`                 `.-/+oso:
+`++:.                           `-/+/
+.`                                 `/</pre>
+      <div class="nf-info">
+        <div class="nf-title">leandro<span class="nf-at">@</span>cachyos</div>
+        <div class="nf-sep"></div>
+        <div class="nf-row"><span class="nf-key">OS</span><span class="nf-val">CachyOS x86_64</span></div>
+        <div class="nf-row"><span class="nf-key">Kernel</span><span class="nf-val">Linux</span></div>
+        <div class="nf-row"><span class="nf-key">Machine</span><span class="nf-val">Acer Predator Neo 16</span></div>
+        <div class="nf-row"><span class="nf-key">CPU</span><span class="nf-val">Intel i7-14650HX (24) @ 5.20 GHz</span></div>
+        <div class="nf-row"><span class="nf-key">GPU</span><span class="nf-val">NVIDIA GeForce RTX 4060 Max-Q / Mobile</span></div>
+        <div class="nf-row"><span class="nf-key">WM</span><span class="nf-val">Hyprland (Wayland)</span></div>
+        <div class="nf-sep"></div>
+        <div class="nf-row"><span class="nf-key">Dotfiles</span><span class="nf-val"><a href="https://github.com/aishend/personal-config" target="_blank" rel="noopener">github.com/aishend/personal-config</a></span></div>
+        <div class="nf-palette">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <div class="wrap">
-      © <span id="yr"></span> Leandro Moreira
+  <section id="about">
+    <div class="eyebrow">About</div>
+    <h2>Who I am</h2>
+    <div class="lede">
+      <p>
+        Computer Engineering student. IT has always fascinated me — but so have other fields:
+        logistics, aviation, the processes behind how things actually run.
+      </p>
+      <p>
+        Like everyone else, I'm in the middle of figuring out what AI means for all of this.
+        Not ignoring it, not panicking about it — trying to find the best way to use it,
+        understand where to invest my time, and make sure these questions don't become
+        an excuse to stop doing things. I'm also paying attention to how it shapes the way we think,
+        while making sure it doesn't think for me.
+      </p>
+      <p>
+        This is my digital notebook. A space to put whatever I feel like — projects, ideas, things I'm learning.
+        Partly to have a record, partly to force myself to actually do stuff.
+      </p>
     </div>
-  </footer>
+  </section>
 
-</div>
+  <footer>© <span id="yr"></span> Leandro Moreira</footer>
 
-<script>
-  const EPOCH = new Date('2026-06-18T00:00:00').getTime();
-  const el = document.getElementById('uptime');
-  function pad(n) { return String(n).padStart(2, '0'); }
-  function tick() {
-    const total = Math.floor((Date.now() - EPOCH) / 1000);
-    const d = Math.floor(total / 86400);
-    const h = Math.floor((total % 86400) / 3600);
-    const m = Math.floor((total % 3600) / 60);
-    const s = total % 60;
-    el.textContent = 'UPTIME: ' + d + 'd ' + pad(h) + ':' + pad(m) + ':' + pad(s);
-  }
-  tick();
-  setInterval(tick, 1000);
-  document.getElementById('yr').textContent = new Date().getFullYear();
+</main>
 
-  // scroll reveal
-  const revealEls = document.querySelectorAll('section, .card, .project-entry, .panel');
-  revealEls.forEach(el => el.classList.add('reveal'));
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-
-  revealEls.forEach(el => observer.observe(el));
-</script>
+<script src="js/app.js"></script>
+<script src="js/posts.js"></script>
+<script src="js/post.js"></script>
+<script src="js/router.js"></script>
 
 </body>
 </html>

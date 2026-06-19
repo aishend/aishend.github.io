@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="post-date" content="YYYY-MM-DDTHH:MM">
+  <meta name="post-tag" content="Tag">
+  <title>Post Title — Leandro Moreira</title>
+  <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <span class="nav-home"><a href="../../index.html"><span class="nav-home__mark">LM</span> / leandro moreira</a></span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">about</a></li>
+      <li><a href="../../projects/index.html">projects</a></li>
+      <li><a href="../index.html" class="active">writing</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="post-header">
+    <div class="eyebrow" id="post-tag-display"></div>
+    <h1>Post Title</h1>
+    <div class="post-meta" id="post-meta-display"></div>
+  </div>
+
+  <div class="post-body">
+    <p>First paragraph — this becomes the excerpt on the listing page.</p>
+
+    <p>More content here.</p>
+  </div>
+
+  <div class="post-back">
+    ← <a href="../index.html">back to writing</a>
+  </div>
+
+  <footer>© <span id="yr"></span> Leandro Moreira</footer>
+
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const date = document.querySelector('meta[name="post-date"]')?.content;
+  const tag  = document.querySelector('meta[name="post-tag"]')?.content;
+
+  if (tag)  document.getElementById('post-tag-display').textContent = tag;
+  if (date) {
+    const d = new Date(date);
+    const day  = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const time = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('post-meta-display').innerHTML = `<span>${day}</span><span>${time}</span>`;
+  }
+</script>
+
+</body>
+</html>

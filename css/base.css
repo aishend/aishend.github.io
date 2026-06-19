@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--copper-bright);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--copper-bright);
+    outline-offset: 3px;
+  }
+}
+
+button:focus-visible {
+  outline: 2px solid var(--copper-bright);
+  outline-offset: 3px;
+}
+
+/* layout */
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* sections */
+section {
+  padding: 52px 0;
+  border-bottom: 1px solid var(--line);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+/* typography */
+h2 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--copper-bright);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.lede {
+  color: var(--text-muted);
+  max-width: 100%;
+  font-size: 15.5px;
+  text-align: justify;
+
+  & p+p {
+    margin-top: 14px;
+  }
+}
+
+/* page header (inner pages) */
+.page-header {
+  padding: 48px 0 36px;
+  border-bottom: 1px solid var(--line);
+
+  & h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  & p {
+    color: var(--text-muted);
+    font-size: 15px;
+    max-width: 560px;
+  }
+}
+
+/* hero */
+.hero {
+  padding: 56px 0 40px;
+  border-bottom: 1px solid var(--line);
+
+  @media (max-width: 640px) {
+    padding: 36px 0 28px;
+  }
+}
+
+/* generic tag */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 2px 6px;
+  margin-top: 10px;
+}
+
+/* link arrow (e.g. "all projects →") */
+.link-more {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--copper-bright);
+}
+
+/* loading state */
+.loading {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin-top: 32px;
+}
+
+/* footer */
+footer {
+  padding: 28px 0 44px;
+  color: var(--text-faint);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--line);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 480px) {
+  .wrap { padding: 0 16px; }
+
+  h2 { font-size: 18px; }
+
+  .page-header {
+    padding: 32px 0 24px;
+
+    & h1 { font-size: 20px; }
+  }
+
+  .lede { font-size: 14.5px; }
+
+  .link-more { font-size: 12px; }
+}

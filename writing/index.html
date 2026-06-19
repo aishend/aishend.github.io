@@ -5,100 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Writing — Leandro Moreira</title>
   <link rel="stylesheet" href="../css/main.css">
-  <style>
-    .post-list { margin-top: 40px; }
-
-    .post-item {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 0 28px;
-    }
-
-    .post-item:last-child { border-bottom: none; }
-
-    .post-date {
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      color: var(--text-faint);
-      padding-top: 4px;
-      line-height: 1.4;
-    }
-
-    .post-date span {
-      display: block;
-    }
-
-    .post-right {}
-
-    .post-tag {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      color: var(--copper-bright);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .post-title {
-      font-size: 17px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      line-height: 1.35;
-    }
-
-    .post-title a {
-      color: var(--text-primary);
-    }
-
-    .post-title a:hover {
-      color: var(--copper-bright);
-      text-decoration: none;
-    }
-
-    .post-excerpt {
-      color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.7;
-      max-width: 580px;
-    }
-
-    .post-read {
-      display: inline-block;
-      margin-top: 12px;
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      color: var(--copper-bright);
-    }
-
-    .post-read:hover { text-decoration: none; opacity: 0.8; }
-
-    /* empty state */
-    .empty {
-      margin-top: 48px;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--text-faint);
-      border: 1px dashed var(--line);
-      border-radius: 6px;
-      padding: 28px 24px;
-    }
-
-    @media (max-width: 540px) {
-      .post-item {
-        grid-template-columns: 1fr;
-        gap: 6px 0;
-      }
-      .post-date { font-size: 11px; }
-    }
-  </style>
 </head>
 <body>
 
-<nav>
+<nav class="nav">
   <div class="wrap nav-inner">
-    <span class="nav-home"><a href="../index.html" style="color:var(--text-muted);"><span style="color:var(--copper-bright)">LM</span> / leandro moreira</a></span>
+    <a href="../index.html" class="nav-home">
+      <span class="nav-home__sep">~</span>
+      <span class="nav-home__sep">/</span>
+      <span class="nav-home__branch">writing</span>
+    </a>
     <ul class="nav-links">
       <li><a href="../index.html">about</a></li>
       <li><a href="../projects/index.html">projects</a></li>
@@ -107,58 +23,25 @@
   </div>
 </nav>
 
-<div class="wrap">
+<main class="wrap">
 
-  <div class="page-header">
+  <div class="page-header reveal">
     <div class="eyebrow">Writing</div>
     <h1>Articles &amp; notes</h1>
     <p>Things I've read, thought about, and ended up writing down.</p>
   </div>
 
-  <div class="post-list">
-
-    <!-- TEMPLATE — copy this block to add a new post
-    <div class="post-item">
-      <div class="post-date">
-        <span>Jun</span>
-        <span>2026</span>
-      </div>
-      <div class="post-right">
-        <div class="post-tag">category</div>
-        <div class="post-title"><a href="posts/slug.html">Title goes here</a></div>
-        <div class="post-excerpt">Short description of the post.</div>
-        <a class="post-read" href="posts/slug.html">read →</a>
-      </div>
-    </div>
-    -->
-
-    <div class="post-item">
-      <div class="post-date">
-        <span>Jun</span>
-        <span>2026</span>
-      </div>
-      <div class="post-right">
-        <div class="post-tag">Test</div>
-        <div class="post-title"><a href="posts/hello-world.html">Hello World</a></div>
-        <div class="post-excerpt">First post. Testing that this works.</div>
-        <a class="post-read" href="posts/hello-world.html">read →</a>
-      </div>
-    </div>
-
+  <div class="post-list" id="post-list">
+    <p class="loading">loading...</p>
   </div>
 
-  <footer>
-    <div>leandro moreira · <a href="../index.html">back to main</a></div>
-  </footer>
+  <footer>© <span id="yr"></span> Leandro Moreira</footer>
 
-</div>
-<script>
-  const revealEls = document.querySelectorAll('.post-item, .page-header');
-  revealEls.forEach(el => el.classList.add('reveal'));
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  revealEls.forEach(el => observer.observe(el));
-</script>
+</main>
+
+<script src="../js/app.js"></script>
+<script src="../js/posts.js"></script>
+<script src="../js/router.js"></script>
+
 </body>
 </html>
